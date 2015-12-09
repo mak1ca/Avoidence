@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Sapwn : MonoBehaviour 
@@ -27,7 +27,7 @@ public class Sapwn : MonoBehaviour
 			if(Singleton.instance.count>=10)
 			{
 				count = 0;
-				Singleton.instance.enemySpeed = Singleton.instance.enemySpeed *2;
+				Singleton.instance.enemySpeed = Singleton.instance.enemySpeed * 1.2f;
 				Singleton.instance.count = 0;
 			}
 			yield return new WaitForSeconds (spawnWait);
