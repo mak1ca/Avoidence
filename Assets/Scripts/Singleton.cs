@@ -8,7 +8,9 @@ public class Singleton : MonoBehaviour {
 	public int health;
 	public float enemySpeed;
 	public bool dead;
-
+	public int value;
+	public int Hearts;
+	public bool invinc = false;
 	private void Awake()
 	{
 		// if the singleton hasn't been initialized yet
@@ -16,16 +18,27 @@ public class Singleton : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 		}
+		enemySpeed = -5;
 		dead=false;
 		instance = this;
 		DontDestroyOnLoad( this.gameObject );
 		PlayerPrefs.SetInt ("score", 0);
 		health = 3;
 		score = 0;
+		Hearts = PlayerPrefs.GetInt("Hearts");
+		value = PlayerPrefs.GetInt("Coins");
 	}
-	void InitGame()
+	void Start()
 	{
-
+		Singleton.instance.enemySpeed = -5;
+		dead=false;
+		instance = this;
+		DontDestroyOnLoad( this.gameObject );
+		PlayerPrefs.SetInt ("score", 0);
+		health = 3;
+		score = 0;
+		Hearts = PlayerPrefs.GetInt("Hearts");
+		value = PlayerPrefs.GetInt("Coins");
 	}
 	private void HideWaveText()
 	{

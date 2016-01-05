@@ -13,10 +13,17 @@ public class Destroy : MonoBehaviour
 	// Update is called once per frame
 	void OnTriggerExit (Collider other)
 	{
-		Destroy(other.gameObject);
-		Singleton.instance.score += 1;
-		scoreText.text = "Score : " + Singleton.instance.score.ToString();
-		PlayerPrefs.SetInt ("score", Singleton.instance.score);
+		if (other.gameObject.tag=="Coin")
+		{
+			Destroy(other.gameObject);
+		}
+		else
+		{
+			Destroy(other.gameObject);
+			Singleton.instance.score += 1;
+			scoreText.text = "Score : " + Singleton.instance.score.ToString();
+			PlayerPrefs.SetInt ("score", Singleton.instance.score);
+		}
 		if (PlayerPrefs.GetInt ("highscore") < Singleton.instance.score)
 		{
 			PlayerPrefs.SetInt ("highscore", Singleton.instance.score);

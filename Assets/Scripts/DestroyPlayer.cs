@@ -19,8 +19,15 @@ public class DestroyPlayer : MonoBehaviour
 	{
 		if(other.gameObject.tag=="Player")
 		{
-			AudioSource.PlayClipAtPoint(aud.clip,this.transform.position);
-			Singleton.instance.health=Singleton.instance.health-1;
+			if(Singleton.instance.invinc==true)
+			{
+
+			}
+			else 
+			{
+				AudioSource.PlayClipAtPoint(aud.clip,this.transform.position);
+				Singleton.instance.health=Singleton.instance.health-1;
+			}
 			Debug.Log(Singleton.instance.health);
 			if(Singleton.instance.health==2)
 			{
@@ -39,7 +46,7 @@ public class DestroyPlayer : MonoBehaviour
 				lives[1].GetComponent<Image>().enabled=false;
 				lives[2].GetComponent<Image>().enabled=false;
 				Destroy(other.gameObject);
-				Application.LoadLevel(3);
+				Application.LoadLevel("Store");
 			}
 			//			for (int i =0;i<lives.Length;i++)
 			//			{

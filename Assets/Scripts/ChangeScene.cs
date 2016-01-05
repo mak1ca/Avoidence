@@ -4,7 +4,7 @@ using System.Collections;
 public class ChangeScene : MonoBehaviour {
 
 	// Use this for initialization
-	public void ChangeToScene (int sceneToChangeTo)
+	public void ChangeToScene (string sceneToChangeTo)
 	{
 		Application.LoadLevel (sceneToChangeTo);
 		//DontDestroyOnLoad (this.gameObject);

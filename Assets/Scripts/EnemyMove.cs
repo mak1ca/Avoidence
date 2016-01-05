@@ -18,4 +18,5 @@ public class EnemyMove : MonoBehaviour {
 		rb.velocity =new Vector3(0.0f,0.0f,1.0f) * speed;
 		Singleton.instance.enemySpeed = speed;
 	}
+
 }

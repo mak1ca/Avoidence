@@ -5,7 +5,7 @@ public class Sapwn : MonoBehaviour
 {
 	public Vector3 spawnValues;
 	public GameObject[] spawn;
-	public GameObject asteroid;
+	//public GameObject asteroid;
 	public int count;
 	public float spawnWait;
 	int rand;
@@ -21,7 +21,7 @@ public class Sapwn : MonoBehaviour
 		yield return new WaitForSeconds (2.3f);
 		while (true) {
 			Vector3 spawnPos = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-			Instantiate (asteroid, spawnPos, transform.rotation);
+			Instantiate (spawn[Random.Range(0,2)], spawnPos, transform.rotation);
 			count++;
 			Singleton.instance.count=count;
 			if(Singleton.instance.count>=10)

@@ -11,7 +11,7 @@ function Start(){
 	pauseEnabled = false;
 	Time.timeScale = 1;
 	AudioListener.volume = 1;
-	Cursor.visible = false;
+	Cursor.visible = true;
 }
 
 function Update(){
@@ -24,8 +24,7 @@ function Update(){
 			//unpause the game
 			pauseEnabled = false;
 			Time.timeScale = 1;
-			AudioListener.volume = 1;
-			Cursor.visible = false;			
+			AudioListener.volume = 1;		
 		}
 		
 		//else if game isn't paused, then pause it
