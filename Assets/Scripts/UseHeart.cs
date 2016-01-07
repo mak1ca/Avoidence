@@ -40,12 +40,12 @@ public class UseHeart : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
 	{
-		if(Singleton.instance.Hearts==0)
-		{
-			canBuyHeart=false;
-		}
+//		if(Singleton.instance.Hearts==0)
+//		{
+//			canBuyHeart=false;
+//		}
 		if(Singleton.instance.score >= 1)
 		{
 			iImage10.enabled=true;

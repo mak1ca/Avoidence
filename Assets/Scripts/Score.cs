@@ -12,10 +12,4 @@ public class Score : MonoBehaviour {
 		scoreText.text = "Final Score: " + PlayerPrefs.GetInt ("score").ToString();
 		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("highscore").ToString ();
 	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
 }

@@ -10,6 +10,7 @@ public class DestroyPlayer : MonoBehaviour
 	void Awake()
 	{
 		aud = GetComponent<AudioSource>();
+		aud.volume = PlayerPrefs.GetFloat("sound");
 		lives[0]=GameObject.Find("Live1");
 		lives[1]=GameObject.Find("Live2");
 		lives[2]=GameObject.Find("Live3");
@@ -28,7 +29,6 @@ public class DestroyPlayer : MonoBehaviour
 				AudioSource.PlayClipAtPoint(aud.clip,this.transform.position);
 				Singleton.instance.health=Singleton.instance.health-1;
 			}
-			Debug.Log(Singleton.instance.health);
 			if(Singleton.instance.health==2)
 			{
 

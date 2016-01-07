@@ -1,38 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class VolumeChange : MonoBehaviour {
-	private AudioSource bgm;
-	static bool AudioBegin = false;
-	GameObject otherSound;
+	public Slider soundVol;
+	public Slider musVol;
 	void Awake()
 	{
-		otherSound = GameObject.FindGameObjectWithTag("Audio");
-		
-		if (otherSound == this.gameObject)
-		{
-			if (!AudioBegin)
-			{
-				DontDestroyOnLoad(this.gameObject);
-				AudioBegin = true;
-			}
-		}
-		else
-		{
-			Destroy(this.gameObject);
-		}
-		bgm.volume = PlayerPrefs.GetFloat ("bgm");
+
 	}
 	// Use this for initialization
 	void Start ()
 	{
-		bgm = GameObject.FindGameObjectWithTag ("Audio").GetComponent<AudioSource> ();
+		soundVol.value = PlayerPrefs.GetFloat("sound");
+		musVol.value=PlayerPrefs.GetFloat("bgm");
 	}
 	
 	// Update is called once per frame
-	public void ChangeVolume (float vol)
+	public void ChangeSoundVolume (float vol)
 	{
-		bgm.volume = vol;
+		PlayerPrefs.SetFloat ("sound", vol);
+	}
+	public void ChangeMusicVolume (float vol)
+	{	
 		PlayerPrefs.SetFloat ("bgm", vol);
 	}
 }

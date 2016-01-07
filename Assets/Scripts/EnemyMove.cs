@@ -11,10 +11,9 @@ public class EnemyMove : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
 	{
 		speed = Singleton.instance.enemySpeed;
-		Debug.Log (speed);
 		rb.velocity =new Vector3(0.0f,0.0f,1.0f) * speed;
 		Singleton.instance.enemySpeed = speed;
 	}

@@ -10,9 +10,4 @@ public class Loader : MonoBehaviour {
 			Instantiate(singletonManager);
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

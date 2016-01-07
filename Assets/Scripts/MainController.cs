@@ -34,7 +34,6 @@ public class MainController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		Debug.Log (Singleton.instance.count);
 		if (Singleton.instance.count > 10)
 		{
 			wave.enabled=true;

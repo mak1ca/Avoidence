@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour {
 		coinText = GameObject.Find("CoinText").GetComponent<Text>();
 	}
 
-	void Update ()
+	void  FixedUpdate ()
 	{
 		rb.velocity = new Vector3(0.0f,0.0f,1.0f) * speed;
 
